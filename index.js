@@ -67,3 +67,7 @@ app.get('/tracks/:albumId', (req, res, next) => {
 app.listen(PORT, () => {
     console.log("server");
 });
+
+app.use((req, res) => {
+    res.render('404')
+})
