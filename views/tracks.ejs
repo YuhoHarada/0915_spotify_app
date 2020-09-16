@@ -1,5 +1,6 @@
 <%- include('./partials/_head')%>
 <main id="trackInhalt">
+    <% if(trackData[0] != undefined){ %> 
     <% trackData.forEach(elt=>{ %>
         <div class="track">
             <h1><a href="<%= elt.uri %> "><%= elt.name %></a></h1>
@@ -9,5 +10,8 @@
             <audio src="<%= elt.preview_url %>" preload="none"></audio>
         </div>
     <% }) %> 
+    <% } else { %> 
+        Track is not found
+    <% } %> 
 </main>
 <%- include('./partials/_foot')%>

@@ -1,5 +1,6 @@
 <%- include('./partials/_head')%>
 <main id="artist" class="three">
+    <% if(mydata[0] != undefined){ %> 
     <% mydata.forEach(elt=>{ %>
         <div class="item">
             <div class="image">
@@ -13,5 +14,8 @@
             <a href="/albums/<%= elt.id %>">View Albums</a>
         </div>
     <% }) %> 
+    <% } else { %> 
+        <%= input %> is not found 
+    <% } %> 
 </main>
 <%- include('./partials/_foot')%>

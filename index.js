@@ -2,7 +2,6 @@ require('dotenv').config()
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3010;
-const formidable = require("formidable");
 const SpotifyWebApi = require('spotify-web-api-node');
 
 app.use(express.static("public"));
@@ -33,7 +32,7 @@ app.get("/artist-search", (req, res) => {
     spotifyApi
         .searchArtists(input)
         .then(data => {
-            res.render("artist-search-results", { mydata: data.body.artists.items });
+            res.render("artist-search-results", { input, mydata: data.body.artists.items });
         })
         .catch(err => console.log('The error while searching artists occurred: ', err));
 });
