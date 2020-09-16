@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3010;
 const formidable = require("formidable");
 const SpotifyWebApi = require('spotify-web-api-node');
 
@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
 app.get("/artist-search", (req, res) => {
     let input = req.query.search_word
     console.log(input)
+    if (input == "") {
+        res.render("index");
+        return
+    }
     spotifyApi
         .searchArtists(input)
         .then(data => {

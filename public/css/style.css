@@ -105,7 +105,7 @@ footer ul li{
     flex-grow: 1;
 }
 .three .item h1{
-    margin: 30px 0;
+    margin: 30px;
 }
 .three .item a{
     display: inline-block;
@@ -143,3 +143,36 @@ footer ul li{
 .audiojs .loaded { height: 10px; background: #000;}
 .audiojs .time { float: left; height: 25px; line-height: 25px; margin: 0; padding: 0 5px;}
 .audiojs .error-message { height: 24px;line-height: 24px; }
+
+
+/* mobile */
+@media (max-width: 1023px){
+    .three{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .track{
+        display: block;
+    }
+    .track h1{
+        margin: 0 0 30px 0;
+    }
+    .track h3{
+        margin: 0 0 30px 0;
+    }
+    .track h3 a:first-of-type{
+        margin-left: 0;
+    }
+    .audiojs{
+        margin-left: 0;
+    }
+}
+@media (max-width: 600px){
+    .three{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 424px){
+    main{
+        padding: 50px 1vw;
+    }
+}
