@@ -1,0 +1,17 @@
+<%- include('./partials/_head')%>
+<main id="albums" class="three">
+    <% albumData.forEach(elt=>{ %>
+        <div class="item">
+            <div class="image">
+                <% if(elt.images[0] != undefined){ %>
+                    <img src="<%= elt.images[0].url %>" alt="">
+                <% } else{ %>
+                    <img src="/images/noimage.png" alt="">
+                <% } %>
+            </div>
+            <h1><%= elt.name %></h1>
+            <a href="/tracks/<%= elt.id %>">View Tracks</a>
+        </div>
+    <% }) %>
+</main>
+<%- include('./partials/_foot')%>
