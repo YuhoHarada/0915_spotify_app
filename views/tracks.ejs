@@ -5,7 +5,7 @@
         <div class="track">
             <h1><a href="<%= elt.uri %> "><%= elt.name %></a></h1>
             <h3><% for(let i = 0 ; i < elt.artists.length ; i++){ %> 
-                <a href="<%= elt.artists[i].url %>"><%= elt.artists[i].name %></a>
+                <a href="<%= elt.artists[i].uri %>"><%= elt.artists[i].name %></a>
             <% } %></h3>
             <audio src="<%= elt.preview_url %>" preload="none"></audio>
         </div>

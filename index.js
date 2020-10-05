@@ -45,7 +45,6 @@ app.get('/albums/:artistId', (req, res, next) => {
                 if (err) {
                     console.error('Something went wrong!');
                 } else {
-                    console.log(data.body.items);
                     res.render("albums", { albumData: data.body.items });
                 }
             }
@@ -57,7 +56,6 @@ app.get('/tracks/:albumId', (req, res, next) => {
     spotifyApi
         .getAlbumTracks(req.params.albumId, { limit: 30, offset: 1 })
         .then(function (data) {
-            console.log(data.body.items);
             res.render("tracks", { trackData: data.body.items });
         }, function (err) {
             console.log('Something went wrong!', err);
